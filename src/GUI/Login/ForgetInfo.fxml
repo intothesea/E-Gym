@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="909.0" prefWidth="1531.0" styleClass="stackpanel" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Login.ForgetInfo">
+    <stylesheets>
+    </stylesheets>
+    <padding>
+        <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+    </padding>
+   <children>
+      <Pane prefHeight="809.0" prefWidth="1354.0">
+         <children>
+            <Label layoutX="40.0" layoutY="71.0" prefHeight="140.0" prefWidth="707.0" style="-fx-font-size: 35;" styleClass="email-text" text="We have sent an email to your mailbox" textFill="WHITE">
+               <font>
+                  <Font name="Wide Latin" size="12.0" />
+               </font>
+            </Label>
+            <SVGPath content="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" layoutX="452.0" layoutY="746.0" style="-fx-fill: #E55000;" />
+            <Hyperlink alignment="CENTER_RIGHT" layoutX="75.0" layoutY="744.0" onAction="#backAction" prefHeight="28.0" prefWidth="381.0" styleClass="myhyperlink" text="Back" />
+            <Label id="email" fx:id="emailtext" layoutX="217.0" layoutY="180.0" prefHeight="140.0" prefWidth="632.0" style="-fx-font-size: 20; -fx-text-fill: #2BBBAD;" text="131" textFill="WHITE">
+               <font>
+                  <Font name="Wide Latin" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="233.0" prefHeight="241.0" prefWidth="504.0" style="-fx-font-size: 25;" styleClass="email-text" text="Please change your password according to the instructions in the email" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Wide Latin" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

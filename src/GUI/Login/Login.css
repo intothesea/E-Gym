@@ -1,0 +1,71 @@
+.root{
+    -success   : #02C852;
+    -warning   : #FF8800;
+    -danger    : #FF3547;
+}
+.login
+{
+    /*-fx-background-color : linear-gradient(#000000, -mint, -success);*/
+    -fx-background-color : linear-gradient(to left top, #E55C5C, #FE774D);
+}
+.btn-large
+{
+    -fx-pref-height : 50px;
+    -fx-max-height : 50px;
+    -fx-min-height : 50px;
+}
+.rounded {
+    -fx-background-radius : 20px;
+    -fx-border-radius : 20px;
+}
+.login:focused, .login:hover
+{
+    -fx-background-color : #E55C5C;
+
+}
+.box-light
+{
+    -fx-background-color : derive( #E6E9ED, 50%);
+}
+.h2 {
+    -fx-font-size : 30px;
+}
+.myhyperlink{
+    -fx-text-fill: linear-gradient(to left,#FE774D,#E55C5C);
+}
+.myhyperlink:hover{
+    -fx-text-fill: pink;
+}
+.stackable{
+    -fx-background-image: url(../imagesrc/run.png);
+    -fx-background-size:cover;
+}
+.clearable-field{
+    -fx-skin: "GUI.global.theme.skin.ClearableSkin";
+}
+.viewer-field{
+    -fx-skin: "GUI.global.theme.skin.ViewerSkin";
+}
+.radio-success .radio,
+.radio-success .radio:hover,
+.radio-success .radio:focused,
+.radio-success:selected .radio
+{
+    -fx-border-color : #02C852;
+}
+
+.radio-warning .radio,
+.radio-warning .radio:hover,
+.radio-warning .radio:focused,
+.radio-warning:selected .radio
+{
+    -fx-border-color : #FF8800;
+}
+
+.radio-danger .radio,
+.radio-danger .radio:hover,
+.radio-danger .radio:focused,
+.radio-danger:selected .radio
+{
+    -fx-border-color : #FF3547;
+}
