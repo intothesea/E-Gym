@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import de.jensd.fx.glyphs.materialdesignicons.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
 <StackPane pickOnBounds="false" prefHeight="1086.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Class.Class">
    <children>
       <TabPane style="-fx-tab-min-width: 100;">
@@ -19,7 +27,7 @@
                <content>
                   <HBox alignment="TOP_LEFT" prefHeight="934.0" prefWidth="1300.0" spacing="0.0" styleClass="box-light " HBox.hgrow="ALWAYS">
                      <children>
-                           <VBox fx:id="drawer" alignment="TOP_CENTER" prefHeight="1133.0" prefWidth="200.0" >
+                           <VBox fx:id="drawer" alignment="TOP_CENTER" prefHeight="1133.0" prefWidth="200.0">
                               <padding>
                                  <Insets top="10.0" />
                               </padding>
@@ -52,7 +60,7 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll" >
+                                 <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll">
                                     <content>
                                        <VBox fx:id="views" styleClass="drawer-content">
                                           <children>
@@ -132,9 +140,9 @@
                                     <children>
                                        <HBox alignment="TOP_CENTER" prefWidth="378.0" spacing="10.0">
                                           <children>
-                                             <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="gn-buttons-drak">
+                                             <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-drak" text="Button">
+                                                   <JFXButton ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -192,7 +200,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" onMouseClicked="#getLive" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -250,7 +258,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -312,7 +320,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -370,7 +378,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -428,7 +436,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -490,7 +498,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -548,7 +556,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -606,7 +614,7 @@
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
-                                                   <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                   <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
                                                          <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>

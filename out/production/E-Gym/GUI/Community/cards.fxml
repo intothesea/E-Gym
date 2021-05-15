@@ -86,7 +86,7 @@
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imagesrc/返回.png" />
+                        <Image url="@../imagesrc/back.png" />
                      </image>
                   </ImageView>
                </graphic>
