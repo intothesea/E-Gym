@@ -25,7 +25,7 @@
             <Tab closable="false" text="Live Trainings">
                <ScrollPane>
                <content>
-                  <HBox alignment="TOP_LEFT" prefHeight="934.0" prefWidth="1300.0" spacing="0.0" styleClass="box-light " HBox.hgrow="ALWAYS">
+                  <HBox fx:id="hbox1" alignment="TOP_LEFT" prefHeight="934.0" prefWidth="1300.0" spacing="0.0" styleClass="box-light " HBox.hgrow="ALWAYS">
                      <children>
                            <VBox fx:id="drawer" alignment="TOP_CENTER" prefHeight="1133.0" prefWidth="200.0">
                               <padding>
@@ -68,7 +68,7 @@
                                                 <content>
                                                    <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
                                                       <children>
-                                                         <Button cache="true" layoutX="20.0" layoutY="120.0" onMouseClicked="#jogging" prefWidth="250" styleClass="drawer-item" text="jogging" />
+                                                         <Button cache="true" layoutX="20.0" layoutY="120.0" onMouseClicked="#freshCard" prefWidth="250" styleClass="drawer-item" text="jogging" />
                                                          <Button alignment="BASELINE_LEFT" cache="true" layoutX="20.0" layoutY="70.0" onMouseClicked="#freshCard" prefWidth="250" styleClass="drawer-item" text="Brisk walking" />
                                                          <Button alignment="BASELINE_LEFT" cache="true" layoutX="20.0" layoutY="20.0" onMouseClicked="#freshCard" prefWidth="250" styleClass="drawer-item" text="Swimming" />
                                                          <Button onMouseClicked="#freshCard" prefWidth="250" styleClass="drawer-item" text="Yoga" />
@@ -138,13 +138,13 @@
                               <children>
                                  <HBox alignment="TOP_CENTER" prefHeight="378.0" prefWidth="478.0" spacing="20.0" styleClass="box-light " HBox.hgrow="ALWAYS">
                                     <children>
-                                       <HBox alignment="TOP_CENTER" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="vedio1_1" alignment="TOP_CENTER" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView1" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2002.png" />
                                                             </image>
@@ -196,13 +196,13 @@
                                              </VBox>
                                           </children>
                                        </HBox>
-                                       <HBox alignment="TOP_CENTER" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video1_2" alignment="TOP_CENTER" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" onMouseClicked="#getLive" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView2" fitHeight="372.0" fitWidth="456.0" onMouseClicked="#getLive" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2003.png" />
                                                             </image>
@@ -254,13 +254,13 @@
                                              </VBox>
                                           </children>
                                        </HBox>
-                                       <HBox alignment="TOP_RIGHT" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="graph1_3" alignment="TOP_RIGHT" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView3" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2004.png" />
                                                             </image>
@@ -316,13 +316,13 @@
                                  </HBox>
                                  <HBox alignment="CENTER" prefHeight="378.0" prefWidth="500.0" spacing="20.0" styleClass="box-light" HBox.hgrow="ALWAYS">
                                     <children>
-                                       <HBox alignment="CENTER" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video2_2" alignment="CENTER" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView4" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2005.png" />
                                                             </image>
@@ -374,13 +374,13 @@
                                              </VBox>
                                           </children>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video2_1" alignment="CENTER_LEFT" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView5" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2006.png" />
                                                             </image>
@@ -432,13 +432,13 @@
                                              </VBox>
                                           </children>
                                        </HBox>
-                                       <HBox alignment="CENTER_RIGHT" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video2_3" alignment="CENTER_RIGHT" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView6" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2007.png" />
                                                             </image>
@@ -494,13 +494,13 @@
                                  </HBox>
                                  <HBox alignment="BOTTOM_CENTER" prefHeight="378.0" prefWidth="500.0" spacing="20.0" styleClass="box-light" HBox.hgrow="ALWAYS">
                                     <children>
-                                       <HBox alignment="BOTTOM_CENTER" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video3_1" alignment="BOTTOM_CENTER" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView7" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2008.png" />
                                                             </image>
@@ -552,13 +552,13 @@
                                              </VBox>
                                           </children>
                                        </HBox>
-                                       <HBox alignment="BOTTOM_LEFT" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video3_2" alignment="BOTTOM_LEFT" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView8" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2009.png" />
                                                             </image>
@@ -610,13 +610,13 @@
                                              </VBox>
                                           </children>
                                        </HBox>
-                                       <HBox alignment="BOTTOM_RIGHT" prefWidth="378.0" spacing="10.0">
+                                       <HBox fx:id="video3_3" alignment="BOTTOM_RIGHT" prefWidth="378.0" spacing="10.0">
                                           <children>
                                              <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                                 <children>
                                                    <JFXButton ellipsisString="" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                       <graphic>
-                                                         <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                         <ImageView fx:id="imageView9" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                <Image url="@../imagesrc/2011.png" />
                                                             </image>

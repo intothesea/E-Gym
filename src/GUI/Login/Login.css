@@ -30,6 +30,9 @@
 .h2 {
     -fx-font-size : 30px;
 }
+.h3 {
+    -fx-font-size : 22px;
+}
 .myhyperlink{
     -fx-text-fill: linear-gradient(to left,#FE774D,#E55C5C);
 }
@@ -68,4 +71,8 @@
 .radio-danger:selected .radio
 {
     -fx-border-color : #FF3547;
+}
+
+.text-danger {
+    -fx-text-fill : white;
 }

@@ -1,45 +1,54 @@
 package GUI.Login;
 
+import Control.MyMD5;
+import Control.UserDaoImp;
+import Entity.User;
 import GUI.App;
 import com.gn.GNAvatarView;
 import com.gn.GNCarousel;
 import global.ViewManager;
 import javafx.animation.RotateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class login implements Initializable {
 
-    @FXML private GNAvatarView avatar;
-    @FXML private HBox box_username;
-    @FXML private HBox box_password;
-    @FXML private TextField username;
-    @FXML private TextField password;
-    @FXML private Button login;
+    @FXML
+    private GNAvatarView avatar;
+    @FXML
+    private HBox box_username;
+    @FXML
+    private HBox box_password;
+    @FXML
+    private HBox box_error;
+    @FXML
+    private TextField username;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private Button login;
+    @FXML
+    private Button forget;
 
-    @FXML private Label lbl_password;
-    @FXML private Label lbl_username;
-    @FXML private Label lbl_error;
+    @FXML
+    private Label lbl_error;
     @FXML
     public ScrollPane body;
+
     private RotateTransition rotateTransition = new RotateTransition();
-    private void load(String module, String name){
+
+    private void load(String module, String name) {
         //System.out.println(getClass().getResource("GUI/" + module + "/" + name + ".fxml"));
         try {
             ViewManager.getInstance().put(
@@ -51,7 +60,10 @@ public class login implements Initializable {
             e.printStackTrace();
         }
     }
-    @FXML private GNCarousel carousel;
+
+    @FXML
+    private GNCarousel carousel;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -63,33 +75,53 @@ public class login implements Initializable {
     }
 
 
-    private boolean validPassword(){
-        return !password.getText().isEmpty() && password.getLength() > 3;
-    }
+    private boolean valid() throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
-    private boolean validUsername(){
-        return !username.getText().isEmpty() && username.getLength() > 3;
+        String name = username.getText();
+        String password1 = password.getText();
+
+        if (password.getText().isEmpty() || password.getLength() < 3)
+            return false;
+
+        UserDaoImp udi = new UserDaoImp();
+        User user = udi.selectByName(name);
+        String passwprdInDb = user.getPassword();
+
+        if (MyMD5.validPassword(password1, passwprdInDb)) {
+
+            System.out.println("Login Successfully");
+            return true;
+        } else {
+            username.setText("");
+            password.setText("");
+            //lbl_error.setVisible(true);
+            System.out.println("Your name or password may wrong. Please try again.");
+            return false;
+
+        }
+
     }
 
     @FXML
-    private void loginAction(){
-        enter();
-//        if(validPassword() && validUsername())
-//            enter();
-//        else {
-//            lbl_password.setVisible(true);
-//            lbl_username.setVisible(true);
-//        }
+    private void loginAction() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+
+        if (valid())
+            enter();
+        else {
+
+            lbl_error.setVisible(true);
+        }
 
     }
+
     @FXML
-    private void ForgetAction(){
+    private void ForgetAction() {
         App.decorator.setContent(ViewManager.getInstance().get("ForgetInfo"));
 
     }
 
     @FXML
-    private void createAction(){
+    private void createAction() {
         App.decorator.setContent(ViewManager.getInstance().get("createaccount"));
     }
 

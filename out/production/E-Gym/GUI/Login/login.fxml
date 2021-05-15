@@ -66,16 +66,16 @@
                               <String fx:value="rounded" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="login1" defaultButton="true" layoutX="57.0" layoutY="41.0" mnemonicParsing="false" onAction="#ForgetAction" prefWidth="161.0" style="-fx-background-color: gray; " text="Forget Info" textFill="WHITE">
+                        <Button fx:id="Forget" defaultButton="true" layoutX="57.0" layoutY="41.0" mnemonicParsing="false" onAction="#ForgetAction" prefWidth="161.0" style="-fx-background-color: gray; " text="Forget Info" textFill="WHITE">
                            <styleClass>
                               <String fx:value="btn-large" />
                               <String fx:value="login" />
                               <String fx:value="rounded" />
                            </styleClass>
                         </Button>
+                        <Label fx:id="lbl_error" layoutX="258.0" styleClass="text-danger" text="Invalid username or password." visible="false" />
                      </children>
                   </Pane>
-                  <Label fx:id="lbl_error" styleClass="text-danger" text="Invalid username or password." visible="false" />
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="289.0">
                      <children>
                         <Hyperlink alignment="CENTER_RIGHT" onAction="#createAction" prefHeight="26.0" prefWidth="456.0" styleClass="myhyperlink" text="Create your account" />

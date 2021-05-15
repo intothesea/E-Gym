@@ -17,22 +17,67 @@
 package GUI.Class;
 
 import GUI.Main.Main;
+import GUI.Community.*;
+import GUI.global.json.JsonTool;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import org.json.JSONArray;
+import org.json.JSONException;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * @author Gleidson Neves da Silveira | gleidisonmt@gmail.com
- * Create on  13/10/2018
- * Version 1.0
- */
 public class Class implements Initializable {
-    Main main=new Main();
+
+    @FXML
+    ImageView imageView1=new ImageView();
+    @FXML ImageView imageView2=new ImageView();
+    @FXML ImageView imageView3=new ImageView();
+    @FXML ImageView imageView4=new ImageView();
+    @FXML ImageView imageView5=new ImageView();
+    @FXML ImageView imageView6=new ImageView();
+    @FXML ImageView imageView7=new ImageView();
+    @FXML ImageView imageView8=new ImageView();
+    @FXML ImageView imageView9=new ImageView();
+    @FXML
+    ImageView[] imageViews=new ImageView[6];
+    @FXML
+    public AnchorPane anchorPane;
+    @FXML
+    public TextArea title;
+    @FXML
+    public TextArea content;
+    @FXML
+    FileChooser fileChooser=new FileChooser();
+    int n=0;
+    public File file;
+    JsonTool a=new JsonTool("src/JSON/video.json");
+
+    public JSONArray input;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        imageViews[0]=imageView1;
+        imageViews[1]=imageView2;
+        imageViews[2]=imageView3;
+        imageViews[3]=imageView4;
+        imageViews[4]=imageView5;
+        imageViews[5]=imageView6;
+       // imageViews[6]=imageView7;
+       // imageViews[7]=imageView8;
+        // imageViews[8]=imageView9;
+        try {
+            input=a.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
