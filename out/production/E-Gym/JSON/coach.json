@@ -1,0 +1,49 @@
+[
+	{
+		"id":1,
+		"coachInfo":{
+			"name":"coach1",
+			"password":"1345678",
+			"birthday":"1999-01-01",
+			"balance":100.0,
+			"email":"coach01@gmail.com",
+			"tel":"12345678"
+		},
+		"course":[
+			{
+				"videoId":1
+			},
+			{
+				"videoId":2
+			},
+			{
+				"videoId":3
+			}
+			
+		]
+	},
+	{
+		"id":2,
+		"coachInfo":{
+			"name":"coach02",
+			"password":"12345678",
+			"birthday":"1998-12-31",
+			"balance":100.0,
+			"email":"coach02@gmail.com",
+			"tel":"12345678"
+		},
+		"course":[
+			{
+				"videoId":1
+			},
+			{
+				"videoId":2
+			},
+			{
+				"videoId":3
+			}
+			
+		]
+	}
+	
+]

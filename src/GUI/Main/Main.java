@@ -16,6 +16,8 @@
  */
 package GUI.Main;
 
+import GUI.Orderlist.Orderdetail;
+import GUI.global.json.JsonTool;
 import com.gn.GNAvatarView;
 import com.jfoenix.controls.JFXBadge;
 import com.jfoenix.controls.JFXButton;
@@ -26,6 +28,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -35,13 +39,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.SVGPath;
 import org.controlsfx.control.PopOver;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
@@ -111,6 +115,12 @@ public class Main implements Initializable {
             }
         });
         populateItems();
+
+        try {
+            poplistvbox();
+        } catch (JSONException | IOException e) {
+            e.printStackTrace();
+        }
         filteredList = new FilteredList<>(items, s -> true);
 
         search.textProperty().addListener(obs -> {
@@ -132,6 +142,58 @@ public class Main implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void poplistvbox() throws JSONException, IOException {
+        JSONArray input;
+        int jsonindex;
+        input=new JsonTool("src/GUI/Orderlist/orderinfo.json").read();
+        JSONObject we ;
+
+        String labeltext[]=new String[10];
+        for(jsonindex=0;jsonindex<input.length()&&jsonindex<9;jsonindex++){
+            we = input.getJSONObject(jsonindex);
+            labeltext[jsonindex]=we.getString("title");
+
+            //System.out.println(main);
+        }
+        labeltext[jsonindex]="...";
+
+
+        Label labelarray[]=new Label[10];
+
+        for(int i=0;i< jsonindex+1;i++){
+
+            //System.out.println(i+labeltext[i]+"\n");
+            labelarray[i]=new Label(labeltext[i]);
+
+            //for(int j=0;j<labeltext[i].length();j++){
+
+            //}
+        }
+        //System.out.println(labelarray[1]);
+        for(int i=0;i<jsonindex+1;i++){
+            VBox vboxtmp=new VBox();
+            vboxtmp.getChildren().add(labelarray[i]);
+            vboxtmp.setAlignment(Pos.CENTER);
+            listvbox.getChildren().add(vboxtmp);
+        }
+        Button seemore=new Button("seemore");
+        seemore.setId("seemore");
+        seemore.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event){
+                title.setText("Orderdetail");
+                System.out.println("orderlist");
+                body.setContent(global.ViewManager.getInstance().get("Orderdetail"));
+
+            }
+        });
+        VBox vboxtmp=new VBox();
+        vboxtmp.getChildren().add(seemore);
+        vboxtmp.setAlignment(Pos.CENTER);
+        listvbox.getChildren().add(vboxtmp);
+
     }
 
 

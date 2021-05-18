@@ -106,7 +106,7 @@
                                                    <MaterialDesignIconView glyphName="CAT" size="22" styleClass="glyph-icon" text="" />
                                                 </graphic>
                                              </Button>
-                                             <Button fx:id="Musle_building" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="50.0" prefWidth="596.0" styleClass="drawer-item" text="Musle building">
+                                             <Button fx:id="Musle_building" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="50.0" prefWidth="596.0" styleClass="drawer-item" text="Muscle building">
                                                 <graphic>
                                                    <MaterialDesignIconView glyphName="HEART" size="22" styleClass="glyph-icon" text="" />
                                                 </graphic>
