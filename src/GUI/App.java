@@ -87,7 +87,7 @@ public class App extends Application {
         load("Publish","Publishment");
 //
 //        load("About","About");
-//        load("About","cards");
+        load("Orderlist","Orderdetail");
         decorator.setContent(ViewManager.getInstance().get("login"));
         //body.setContent(ViewManager.getInstance().get("login"));
     }

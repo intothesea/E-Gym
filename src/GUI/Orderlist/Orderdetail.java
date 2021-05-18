@@ -11,7 +11,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
-public class community {
+public class Orderdetail {
     @FXML
     private VBox cardlist;
 
@@ -30,12 +30,12 @@ public class community {
         //System.out.println(1111111111);
 
         //Todo
-        input=new JsonTool("src/GUI.json").read();
+        input=new JsonTool("src/GUI/Orderlist/orderinfo.json").read();
 
         for(jsonindex=0;jsonindex<input.length();jsonindex++){
             FXMLLoader loader = new FXMLLoader();
 
-            loader.setLocation(community.class.getResource("template.fxml"));
+            loader.setLocation(Orderdetail.class.getResource("templatecourse.fxml"));
             AnchorPane cardtemp = (AnchorPane) loader.load();
 
             cardlist.getChildren().add(cardtemp);

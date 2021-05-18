@@ -26,6 +26,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -111,6 +113,8 @@ public class Main implements Initializable {
             }
         });
         populateItems();
+
+        poplistvbox();
         filteredList = new FilteredList<>(items, s -> true);
 
         search.textProperty().addListener(obs -> {
@@ -132,6 +136,44 @@ public class Main implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void poplistvbox() {
+        String labeltext[]= new String[]{"11111", "22222","33333","444444","55555","66666","77777","888888","99999"};
+        Label labelarray[]=new Label[9];
+
+        for(int i=0;i< labeltext.length;i++){
+
+            //System.out.println(i+labeltext[i]+"\n");
+            labelarray[i]=new Label(labeltext[i]);
+
+            //for(int j=0;j<labeltext[i].length();j++){
+
+            //}
+        }
+        //System.out.println(labelarray[1]);
+        for(int i=0;i< labeltext.length;i++){
+            VBox vboxtmp=new VBox();
+            vboxtmp.getChildren().add(labelarray[i]);
+            vboxtmp.setAlignment(Pos.CENTER);
+            listvbox.getChildren().add(vboxtmp);
+        }
+        Button seemore=new Button("seemore");
+        seemore.setId("seemore");
+        seemore.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event){
+                title.setText("Orderdetail");
+                System.out.println("orderlist");
+                body.setContent(global.ViewManager.getInstance().get("Orderdetail"));
+
+            }
+        });
+        VBox vboxtmp=new VBox();
+        vboxtmp.getChildren().add(seemore);
+        vboxtmp.setAlignment(Pos.CENTER);
+        listvbox.getChildren().add(vboxtmp);
+
     }
 
 
