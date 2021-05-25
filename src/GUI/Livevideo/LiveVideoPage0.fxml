@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import de.jensd.fx.glyphs.materialdesignicons.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
 <StackPane prefHeight="1700.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Livevideo.LiveVideo">
    <children>
       <TabPane style="-fx-tab-min-width: 100;">
@@ -26,18 +32,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn0" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic0" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2002.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2002.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Live-Jumping Jacks">
+                                                      <Label fx:id="title0" styleClass="h4" text="Live-Jumping Jacks">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -63,7 +69,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="1,200">
@@ -84,18 +90,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn1" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic1" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2003.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2003.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Bench press">
+                                                      <Label fx:id="title1" styleClass="h4" text="Bench press">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -121,7 +127,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="3,284">
@@ -142,18 +148,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn2" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic2" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2004.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2004.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Stiff-legged DeadLift live">
+                                                      <Label fx:id="title2" styleClass="h4" text="Stiff-legged DeadLift live">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -179,7 +185,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="516">
@@ -204,18 +210,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn3" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic3" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2005.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2005.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Weight squats with me!">
+                                                      <Label fx:id="title3" styleClass="h4" text="Weight squats with me!">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -241,7 +247,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="6,420">
@@ -262,18 +268,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn4" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic4" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2006.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2006.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="60 seconds weight loss(no equipment)">
+                                                      <Label fx:id="title4" styleClass="h4" text="60 seconds weight loss(no equipment)">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -299,7 +305,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="732">
@@ -320,18 +326,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="336.0" prefWidth="406.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn5" onAction="#getLive" prefHeight="336.0" prefWidth="406.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic5" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2007.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2007.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Home Fitness(NO Equipment)">
+                                                      <Label fx:id="title5" styleClass="h4" text="Home Fitness(NO Equipment)">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -357,7 +363,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="4,425">
@@ -382,18 +388,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn6" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic6" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2008.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2008.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Live-Yoga ball">
+                                                      <Label fx:id="title6" styleClass="h4" text="Live-Yoga ball">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -419,7 +425,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="1,145">
@@ -440,18 +446,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn7" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic7" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2009.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2009.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Push up with me!">
+                                                      <Label fx:id="title7" styleClass="h4" text="Push up with me!">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -477,7 +483,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="420">
@@ -498,18 +504,18 @@
                                        <children>
                                           <VBox prefHeight="191.0" prefWidth="456.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
                                              <children>
-                                                <JFXButton onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
+                                                <JFXButton id="btn8" onAction="#getLive" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark">
                                                    <graphic>
-                                                      <ImageView fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="pic8" fitHeight="372.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../imagesrc/2011.png" />
+                                                            <Image url="@../imagesrc/LiveVideoPic/2010.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </JFXButton>
                                                 <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Label styleClass="h4" text="Ring Fit Adventure!">
+                                                      <Label fx:id="title8" styleClass="h4" text="Ring Fit Adventure!">
                                                          <padding>
                                                             <Insets bottom="0.0" left="20.0" top="15.0" />
                                                          </padding>
@@ -535,7 +541,7 @@
                                                             <String fx:value="btn-large" />
                                                          </styleClass>
                                                          <graphic>
-                                                            <MaterialDesignIconView glyphName="ACCOUNT" size="22" styleClass="icon" />
+                                                            <MaterialDesignIconView glyphName="HEART" size="22" styleClass="icon" />
                                                          </graphic>
                                                       </JFXButton>
                                                       <Label prefHeight="88.0" prefWidth="40.0" text="6,890">
@@ -556,13 +562,13 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="300.0" prefWidth="500.0" spacing="50.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <JFXButton onMouseClicked="#PageUP" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark" text="Page Up" HBox.hgrow="ALWAYS" />
-                                    <Label text="Page 1">
+                                    <JFXButton onMouseClicked="#PageUP" prefHeight="100.0" prefWidth="120.0" styleClass="gn-buttons-dark" text="Page Up" HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="page1" text="Page 1">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <JFXButton onAction="#PageDown" onMouseClicked="#PageDown" prefHeight="100.0" prefWidth="100.0" styleClass="gn-buttons-dark" text="Page Down" />
+                                    <JFXButton onAction="#PageDown" onMouseClicked="#PageDown" prefHeight="100.0" prefWidth="120.0" styleClass="gn-buttons-dark" text="Page Down" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="50.0" right="50.0" />

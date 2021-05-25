@@ -16,6 +16,8 @@
  */
 package GUI.Livevideo;
 
+import GUI.Community.community;
+import GUI.Main.Main;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
@@ -28,8 +30,11 @@ import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,6 +50,7 @@ public class MediaView implements Initializable {
     @FXML private javafx.scene.media.MediaView mediaView;
     @FXML private Label playTime;
     @FXML private FontAwesomeIconView icon;
+    @FXML private Label title;
 
     private Duration duration;
 //    private Media media = new Media("file:///C:/Users/gleid/Videos/Android.mp4");
@@ -53,13 +59,98 @@ public class MediaView implements Initializable {
     private final boolean repeat = false;
     private boolean stopRequested = false;
     private boolean atEndOfMedia = false;
+    public int position;
+    public void setPosition(int position){
+        this.position=position;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        File filepath=new File("src/Cheerleader.mp4");
+        /*File filepath=new File("src/Cheerleader.mp4");
         System.out.println("test"+filepath);
-        media = new Media(new File("src/GUI/mediasrc/Cheerleader.mp4").toURI().toString());
+        media = new Media(new File("src/GUI/mediasrc/v"+position+".mp4").toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+
+        mediaView.setMediaPlayer(mediaPlayer);
+
+        mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
+            @Override
+            public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
+                updateValues();
+            }
+        });
+        mediaPlayer.setOnPlaying(new Runnable() {
+            public void run() {
+
+                if (stopRequested) {
+                    mediaPlayer.pause();
+                    stopRequested = false;
+                } else {
+                    icon.setGlyphName("PAUSE");
+//                    playButton.setGraphic(imageViewPause);
+                    //playButton.setText("||");
+                }
+            }
+        });
+        mediaPlayer.setOnPaused(new Runnable() {
+            public void run() {
+
+                icon.setGlyphName("PLAY");
+                //playButton.setText("||");
+            }
+        });
+        mediaPlayer.setOnReady(new Runnable() {
+            public void run() {
+                duration = mediaPlayer.getMedia().getDuration();
+                mediaPlayer.getMedia().getDuration();
+                updateValues();
+            }
+        });
+
+        mediaPlayer.setCycleCount(repeat ? MediaPlayer.INDEFINITE : 1);
+        mediaPlayer.setOnEndOfMedia(new Runnable() {
+            public void run() {
+                if (!repeat) {
+                    icon.setGlyphName("PAUSE");
+//                    playButton.setGraphic(imageViewPlay);
+                    //playButton.setText(">");
+                    stopRequested = true;
+                    atEndOfMedia = true;
+                }
+            }
+        });
+
+
+        slider.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(javafx.beans.Observable observable) {
+                if (slider.isValueChanging()) {
+                    // multiply duration by percentage calculated by slider position
+                    if(duration != null) {
+                        mediaPlayer.seek(duration.multiply(slider.getValue() / 100.0));
+                    }
+                    updateValues();
+
+                }
+            }
+        });
+
+        volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                if (volumeSlider.isValueChanging()) {
+                    mediaPlayer.setVolume(volumeSlider.getValue() / 100.0);
+                }
+            }
+        });*/
+    }
+
+    public void show() throws JSONException {
+        JSONObject w = LiveVideo.input.getJSONObject(position);
+        title.setText(w.getString("title"));
+        System.out.println(new File("src/GUI/mediasrc/v"+position+".mp4").toURI().toString());
+        media = new Media(new File("src/GUI/mediasrc/v"+position+".mp4").toURI().toString());
         mediaPlayer = new MediaPlayer(media);
 
         mediaView.setMediaPlayer(mediaPlayer);
@@ -136,6 +227,10 @@ public class MediaView implements Initializable {
         });
     }
 
+@FXML
+    private void handleclickm() throws IOException, JSONException {
+        Main.ctrl.body.setContent(global.ViewManager.getInstance().get("LiveVideoPage0"));
+    }
 
     private void updateValues() {
         if (playTime != null && slider != null && volumeSlider != null && duration != null) {

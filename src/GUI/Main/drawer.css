@@ -134,7 +134,7 @@
 .Pagelist{
     /*If you can't enter mainpage, please delete the following line.*/
     /*进不去mainpage就把下面这行删了.*/
-    -fx-background-image: url(../imagesrc/pagelistdemo.png);
+    -fx-background-image: url(../imagesrc/foreground.jpg);
     -fx-background-size: cover;
 }
 .btn-transparent:focused,

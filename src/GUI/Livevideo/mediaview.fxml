@@ -1,36 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
-<?import java.lang.*?>
-<?import java.net.*?>
+
 <StackPane prefHeight="825.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Livevideo.MediaView">
    <children>
       <TabPane prefHeight="825.0" prefWidth="1196.0" style="-fx-tab-min-width: 100;">
          <tabs>
             <Tab closable="false" text="Live video">
                <content>
-                  <VBox prefHeight="778.0" prefWidth="1189.0" spacing="10.0">
+                  <VBox prefHeight="776.0" prefWidth="1140.0" spacing="10.0">
                      <children>
-                        <VBox prefHeight="79.0" prefWidth="1157.0">
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="14.0" onAction="#handleclickm" prefHeight="32.0" prefWidth="42.0" ripplerFill="BLACK">
+                           <styleClass>
+                              <String fx:value="btn-transparent" />
+                              <String fx:value="round" />
+                              <String fx:value="btn-large" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagesrc/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <VBox prefHeight="67.0" prefWidth="1157.0">
                            <children>
-                              <Label prefHeight="58.0" prefWidth="302.0" text="Name of the video">
+                              <Label fx:id="title" prefHeight="25.0" prefWidth="1157.0" text="title" textFill="#0b03eb">
                                  <styleClass>
                                     <String fx:value="h3" />
                                     <String fx:value="title" />
                                  </styleClass>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
                               </Label>
                               <TextFlow prefHeight="37.0" prefWidth="1157.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Description of this video:" wrappingWidth="558.283203125" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Description of this video:" wrappingWidth="558.283203125" />
                                  </children>
                               </TextFlow>
                            </children>
@@ -75,7 +101,7 @@
                                     </VBox>
                                     <VBox alignment="CENTER" prefHeight="577.0" prefWidth="151.0" spacing="20.0">
                                        <children>
-                                          <JFXButton prefHeight="50.0" prefWidth="90.0" >
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
                                              <styleClass>
                                                 <String fx:value="btn-transparent" />
                                                 <String fx:value="round" />
@@ -85,7 +111,7 @@
                                                 <MaterialDesignIconView glyphName="GIFT" size="50" styleClass="icon" />
                                              </graphic>
                                           </JFXButton>
-                                          <JFXButton prefHeight="50.0" prefWidth="90.0" >
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
                                              <styleClass>
                                                 <String fx:value="btn-transparent" />
                                                 <String fx:value="round" />
@@ -95,7 +121,7 @@
                                                 <MaterialDesignIconView glyphName="HEART" size="50" styleClass="icon" />
                                              </graphic>
                                           </JFXButton>
-                                          <JFXButton prefHeight="50.0" prefWidth="90.0" >
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
                                              <styleClass>
                                                 <String fx:value="btn-transparent" />
                                                 <String fx:value="round" />
@@ -105,7 +131,7 @@
                                                 <MaterialDesignIconView glyphName="BOOK" size="50" styleClass="icon" />
                                              </graphic>
                                           </JFXButton>
-                                          <JFXButton prefHeight="50.0" prefWidth="90.0" >
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
                                              <styleClass>
                                                 <String fx:value="btn-transparent" />
                                                 <String fx:value="round" />
