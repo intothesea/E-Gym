@@ -2,11 +2,11 @@
 	{
 		"liveId":1,
 		"videoInfo":{
-			"name":"负重深蹲",
+			"name":"hiit",
 			"startTime":"2021-04-09",
 			"endTime":"2021-05-22",
 			"coachId":1,
-			"type":"下肢训练",
+			"type":"hiit",
 			"localPath":"xxxxxxx"
 			
 		}
@@ -14,11 +14,11 @@
 	{
 		"liveId":2,
 		"videoInfo":{
-			"name":"卧推",
+			"name":"yoga",
 			"startTime":"2021-03-27",
 			"endTime":"2021-04-08",
 			"coachId":2,
-			"type":"上肢训练",
+			"type":"yoga",
 			"localPath":"xxxxxxx"
 			
 		}

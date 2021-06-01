@@ -1,8 +1,14 @@
-package Entity;
-
+package entity;
+/**
+ * Title: video
+ * Description: The entity class for videos.
+ *
+ * @author MingdaJia
+ * @version 1.0.1
+ */
 public class Video extends Course {
 	private String type;
-	private String localpath;
+	private String localPath;
 
 	public Video() {
 		super();
@@ -11,7 +17,7 @@ public class Video extends Course {
 	public Video(int courseid, int coachid, String type, String localpath) {
 		super(courseid, coachid);
 		this.type = type;
-		this.localpath = localpath;
+		this.localPath = localpath;
 	}
 
 	public String getType() {
@@ -23,11 +29,11 @@ public class Video extends Course {
 	}
 
 	public String getLocalpath() {
-		return localpath;
+		return localPath;
 	}
 
 	public void setLocalpath(String localpath) {
-		this.localpath = localpath;
+		this.localPath = localpath;
 	}
 
 }

@@ -44,10 +44,10 @@
     -fx-background-size:cover;
 }
 .clearable-field{
-    -fx-skin: "GUI.global.theme.skin.ClearableSkin";
+    -fx-skin: "control.global.theme.skin.ClearableSkin";
 }
 .viewer-field{
-    -fx-skin: "GUI.global.theme.skin.ViewerSkin";
+    -fx-skin: "control.global.theme.skin.ViewerSkin";
 }
 .radio-success .radio,
 .radio-success .radio:hover,

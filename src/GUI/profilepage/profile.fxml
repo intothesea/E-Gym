@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="762.0" prefWidth="1396.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.profilepage.profile">
+   <stylesheets>
+      <URL value="@../login/Login.css" />
+   </stylesheets>
+   <children>
+      <VBox prefHeight="756.0" prefWidth="1021.0">
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         <children>
+            <HBox spacing="80.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="742.0" prefWidth="238.0">
+                     <children>
+                        <ImageView fitHeight="148.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imagesrc/user/user1.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="46.0" prefWidth="107.0" />
+                        <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="245.240234375">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Label />
+
+                        <VBox prefHeight="300.0" prefWidth="150.0">
+                           <children>
+                              <HBox alignment="BOTTOM_LEFT">
+                                 <children>
+                                    <Label prefHeight="15.0" prefWidth="126.0" styleClass="min" text="Friends">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font></Label>
+                                    <Separator prefWidth="215.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <GridPane prefHeight="180.0" prefWidth="135.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="42.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="196.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <ImageView fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../imagesrc/icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="44.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../imagesrc/icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="46.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@../imagesrc/icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="friend1" strokeType="OUTSIDE" strokeWidth="0.0" text="YuchengZhang" wrappingWidth="171.47802734375" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="20.0" />
+                                             </GridPane.margin>
+                                          </Text>
+                                          <Text fx:id="friend2" strokeType="OUTSIDE" strokeWidth="0.0" text="user1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="20.0" />
+                                             </GridPane.margin>
+                                          </Text>
+                                          <Text fx:id="friend3" strokeType="OUTSIDE" strokeWidth="0.0" text="user2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="20.0" />
+                                             </GridPane.margin>
+                                          </Text>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="441.0" styleClass="min" text="Favorite Sports" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font></Label>
+                                    <Separator prefWidth="215.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets top="50.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Swimming" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="0.0" prefWidth="619.0" />
+                        <TabPane prefHeight="743.0" prefWidth="703.0" VBox.vgrow="ALWAYS">
+                           <tabs>
+                              <Tab closable="false" text="About">
+                                 <content>
+                                    <VBox prefHeight="713.0" prefWidth="664.0">
+                                       <children>
+                                          <GridPane prefHeight="299.0" prefWidth="485.0" style="-fx-border-color: #000000;">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="142.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="443.0" minWidth="10.0" prefWidth="200.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="443.0" minWidth="10.0" prefWidth="172.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label style="-fx-font-weight: bold;" text="ID">
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: bold;" text="Email" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: bold;" styleClass="h5" text="Birthday" GridPane.rowIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="131.0" style="-fx-font-weight: bold;" text="Telephone" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#emailModify" prefHeight="30.0" prefWidth="81.0" text="Modify" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="55.0" />
+                                                   </GridPane.margin>
+                                                </Button>
+                                                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" mnemonicParsing="false" onAction="#telModify" prefHeight="30.0" prefWidth="81.0" text="Modify" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="55.0" />
+                                                   </GridPane.margin>
+                                                </Button>
+                                                <Label style="-fx-font-weight: bold;" text="Balance" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Text fx:id="balance" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="26.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Text>
+                                                <TextField fx:id="email" prefHeight="24.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="26.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="20.0" right="10.0" />
+                                                   </padding>
+                                                   <GridPane.margin>
+                                                      <Insets left="30.0" right="30.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="telephone" prefHeight="22.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="26.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="30.0" right="30.0" />
+                                                   </GridPane.margin>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="20.0" right="10.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <Text fx:id="birthday" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="26.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Text>
+                                                <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="201.0" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="26.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </Text>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </Tab>
+                              <Tab closable="false" text="VIP Upgrade">
+                                 <content>
+                                    <AnchorPane prefHeight="716.0" prefWidth="647.0">
+                                       <children>
+                                          <Label layoutX="422.0" layoutY="-11.0" prefHeight="91.0" prefWidth="545.0" text="Pick your Premium" textAlignment="CENTER" wrapText="true">
+                                             <padding>
+                                                <Insets left="72.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Microsoft JhengHei Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="525.0" layoutY="46.0" prefHeight="41.0" prefWidth="192.0" text="Enjoy as a VIP gym member!" />
+                                          <HBox alignment="CENTER" layoutY="87.0" prefHeight="628.0" prefWidth="845.0" spacing="20.0" styleClass="box-light " AnchorPane.leftAnchor="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <VBox prefHeight="600.0" prefWidth="404.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="43.0" prefWidth="128.0" text="Oridinary User">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="15.0" prefWidth="283.0" text="  only $0.00 per month, enjoy as you wish!" />
+                                                      <Label prefHeight="56.0" prefWidth="265.0" />
+                                                      <Label prefHeight="23.0" prefWidth="271.0" text="-Free at all                                           √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Use everywhere                                 √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-most of exercise videos and  lives     √" wrapText="true" />
+                                                      <Label prefHeight="315.0" prefWidth="308.0" />
+                                                      <Button fx:id="normal" mnemonicParsing="false" onAction="#statusToNormal" prefHeight="48.0" prefWidth="184.0" text="GET STARTED!" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="btn-large" />
+                                                            <String fx:value="login" />
+                                                            <String fx:value="rounded" />
+                                                         </styleClass>
+                                                         <VBox.margin>
+                                                            <Insets left="40.0" />
+                                                         </VBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </VBox>
+                                                <Label />
+                                                <VBox prefHeight="600.0" prefWidth="404.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="44.0" prefWidth="121.0" text="Oridinary VIP">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="15.0" prefWidth="257.0" text="  only $9.99 per month, enjoy as you wish!" />
+                                                      <Label prefHeight="56.0" prefWidth="265.0" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Use everywhere                                    √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-all of exercise videos and lives             √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-VIP only courses                                   √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Reminder for the opening of lives       √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-No Ads                                                  √" wrapText="true" />
+                                                      <Label prefHeight="269.0" prefWidth="253.0" />
+                                                      <Button fx:id="vip" mnemonicParsing="false" onAction="#statusToVIP" prefHeight="48.0" prefWidth="184.0" text="GET STARTED!" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="btn-large" />
+                                                            <String fx:value="login" />
+                                                            <String fx:value="rounded" />
+                                                         </styleClass>
+                                                         <VBox.margin>
+                                                            <Insets left="40.0" />
+                                                         </VBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="600.0" prefWidth="404.0" style="-fx-border-color: white; -fx-background-color: white;" styleClass="raised">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="44.0" prefWidth="121.0" text="Ultra VIP">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="15.0" prefWidth="257.0" text="  only $19.99 per month, enjoy as you wish!" />
+                                                      <Label prefHeight="56.0" prefWidth="265.0" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Use everywhere                                    √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-all of exercise videos and lives             √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-VIP only courses                                   √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Reminder for the opening of lives        √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-No Ads                                                  √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Personal coath                                      √" wrapText="true" />
+                                                      <Label prefHeight="23.0" prefWidth="277.0" text="-Personal customized training               √" wrapText="true" />
+                                                      <Label prefHeight="223.0" prefWidth="261.0" />
+                                                      <Button fx:id="ultra" mnemonicParsing="false" onAction="#statusToUltraVIP" prefHeight="48.0" prefWidth="184.0" text="GET STARTED!" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="btn-large" />
+                                                            <String fx:value="login" />
+                                                            <String fx:value="rounded" />
+                                                         </styleClass>
+                                                         <VBox.margin>
+                                                            <Insets left="40.0" />
+                                                         </VBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

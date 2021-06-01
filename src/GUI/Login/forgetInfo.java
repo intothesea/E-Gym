@@ -1,22 +1,27 @@
-package GUI.Login;
+package gui.login;
 
-import Control.MyMD5;
-import Control.UserDaoImp;
-import Entity.User;
-import GUI.App;
+import control.MyMD5;
+import control.UserDaoImp;
+import entity.User;
+import gui.App;
+import control.global.ViewManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
-import java.util.ResourceBundle;
 
-public class forgetInfo {
+/**
+ * Title: ForgetInfo
+ * Description: The FXML controller for the find-back password page
+ *
+ * @author MingdaJia
+ * @version 1.0.1
+ */
+public class ForgetInfo {
 
     @FXML
     private TextField E_mail;
@@ -25,9 +30,17 @@ public class forgetInfo {
     @FXML
     private Label label;
     @FXML
-    private HBox box_emial;
+    private HBox boxEmail;
     @FXML
-    private HBox box_username;
+    private HBox boxUsername;
+
+    /**
+     * Title: findBack
+     * Description: Find back password
+     *
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     */
     @FXML
     public void findBack() throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
@@ -50,9 +63,14 @@ public class forgetInfo {
         }
 
     }
+
+    /**
+     * Title: backAction
+     * Description: back to last page
+     */
     @FXML
     private void backAction(){
-        App.decorator.setContent(global.ViewManager.getInstance().get("login"));
+        App.decorator.setContent(ViewManager.getInstance().get("login"));
     }
 
 }

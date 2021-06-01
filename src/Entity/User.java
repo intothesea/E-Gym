@@ -1,5 +1,12 @@
-package Entity;
+package entity;
 
+/**
+ * Title: User
+ * Description: The entity class for E-Gym users.
+ *
+ * @author MingdaJia
+ * @version 1.0.1
+ */
 public class User {
 	private int uid;
 	private String password;
@@ -8,12 +15,14 @@ public class User {
 	private double balance;
 	private String email;
 	private String tel;
+	private String VIPstatus;
+	private String filePath;
 
 	public User() {
 		super();
 	}
 
-	public User(int uid, String password, String name, String birthday, double balance, String email, String tel) {
+	public User(int uid, String password, String name, String birthday, double balance, String email, String tel, String filePath) {
 		super();
 		this.uid = uid;
 		this.password = password;
@@ -22,6 +31,21 @@ public class User {
 		this.balance = balance;
 		this.email = email;
 		this.tel = tel;
+		this.filePath = filePath;
+		this.VIPstatus = "Ordinary User";
+	}
+
+	public User(int uid, String password, String name, String birthday, double balance, String email, String tel, String filePath, String status) {
+		super();
+		this.uid = uid;
+		this.password = password;
+		this.name = name;
+		this.birthday = birthday;
+		this.balance = balance;
+		this.email = email;
+		this.tel = tel;
+		this.filePath = filePath;
+		this.VIPstatus = status;
 	}
 
 	public int getUid() {
@@ -78,5 +102,21 @@ public class User {
 
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+
+	public String getVIPstatus(){
+		return VIPstatus;
+	}
+
+	public void setVIPstatus(String status){
+		this.VIPstatus = status;
+	}
+
+	public String getFilePath(){
+		return filePath;
+	}
+
+	public void setFilePath(String status){
+		this.filePath = filePath;
 	}
 }

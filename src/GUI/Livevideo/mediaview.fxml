@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<StackPane prefHeight="825.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Livevideo.MediaView">
+<StackPane prefHeight="825.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.livevideo.MediaView">
    <children>
       <TabPane prefHeight="825.0" prefWidth="1196.0" style="-fx-tab-min-width: 100;">
          <tabs>
@@ -29,7 +29,7 @@
                <content>
                   <VBox prefHeight="776.0" prefWidth="1140.0" spacing="10.0">
                      <children>
-                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="14.0" onAction="#handleclickm" prefHeight="32.0" prefWidth="42.0" ripplerFill="BLACK">
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="14.0" onAction="#handleClickm" prefHeight="32.0" prefWidth="42.0" ripplerFill="BLACK">
                            <styleClass>
                               <String fx:value="btn-transparent" />
                               <String fx:value="round" />
@@ -56,7 +56,7 @@
                               </Label>
                               <TextFlow prefHeight="37.0" prefWidth="1157.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Description of this video:" wrappingWidth="558.283203125" />
+                                    <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;"  wrappingWidth="558.283203125" />
                                  </children>
                               </TextFlow>
                            </children>
@@ -80,7 +80,7 @@
                                                          <children>
                                                             <JFXButton contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#play" prefHeight="30.0" prefWidth="40.0" ripplerFill="#000000c7" text="Play">
                                                                <graphic>
-                                                                  <FontAwesomeIconView fx:id="icon" fill="#00000080" glyphName="PLAY" style="-fx-fill: white;" />
+                                                                  <FontAwesomeIconView fx:id="icon" fill="#00000080" glyphName="PLAY" style="-fx-fill: black;" />
                                                                </graphic>
                                                                <styleClass>
                                                                   <String fx:value="btn-transparent" />
@@ -88,8 +88,8 @@
                                                                </styleClass>
                                                             </JFXButton>
                                                             <Slider fx:id="slider" prefHeight="16.0" prefWidth="266.0" />
-                                                            <Label fx:id="playTime" prefHeight="15.0" prefWidth="95.0" style="-fx-text-fill: white;" text="Label" />
-                                                            <Label prefHeight="17.0" prefWidth="88.0" style="-fx-text-fill: white;" text="Volume" />
+                                                            <Label fx:id="playTime" prefHeight="15.0" prefWidth="95.0" style="-fx-text-fill: black;" text="Label" />
+                                                            <Label prefHeight="17.0" prefWidth="88.0" style="-fx-text-fill: black;" text="  Volume" />
                                                             <Slider fx:id="volumeSlider" prefHeight="18.0" prefWidth="81.0" />
                                                          </children>
                                                       </HBox>

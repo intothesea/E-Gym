@@ -1,33 +1,37 @@
-package GUI.Login;
+package gui.login;
 
-import Control.MyMD5;
-import Control.UserDaoImp;
-import Entity.User;
-import GUI.App;
+import control.MyMD5;
+import control.UserDaoImp;
+import entity.User;
+import gui.App;
+import gui.mainpage.Main;
+import control.global.ViewManager;
 import com.gn.GNAvatarView;
-import com.gn.GNCarousel;
-import global.ViewManager;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import java.util.ResourceBundle;
 
-public class login implements Initializable {
+/**
+ * Title: Login
+ * Description: The FXML controller of login page
+ *
+ * @author MingdaJia
+ * @version 1.0.1
+ */
+public class Login implements Initializable {
 
     @FXML
     private GNAvatarView avatar;
     @FXML
-    private HBox box_username;
+    private HBox boxUsername;
     @FXML
     private HBox box_password;
     @FXML
@@ -47,22 +51,8 @@ public class login implements Initializable {
     public ScrollPane body;
 
     private RotateTransition rotateTransition = new RotateTransition();
+    private String userName;
 
-    private void load(String module, String name) {
-        //System.out.println(getClass().getResource("GUI/" + module + "/" + name + ".fxml"));
-        try {
-            ViewManager.getInstance().put(
-                    name,
-                    FXMLLoader.load(getClass().getResource("/GUI/" + module + "/" + name + ".fxml"))
-            );
-            //preloaderNotify();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private GNCarousel carousel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -74,7 +64,15 @@ public class login implements Initializable {
 
     }
 
-
+    /**
+     * Title: valid
+     * Description: The valid function to check if the username and password is match
+     *
+     *
+     * @return boolean if match, return true, else return false
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     */
     private boolean valid() throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
         String name = username.getText();
@@ -82,7 +80,7 @@ public class login implements Initializable {
 
         if (password.getText().isEmpty() || password.getLength() < 3)
             return false;
-
+        this.userName=name;
         UserDaoImp udi = new UserDaoImp();
         User user = udi.selectByName(name);
         String passwprdInDb = user.getPassword();
@@ -94,7 +92,6 @@ public class login implements Initializable {
         } else {
             username.setText("");
             password.setText("");
-            //lbl_error.setVisible(true);
             System.out.println("Your name or password may wrong. Please try again.");
             return false;
 
@@ -102,11 +99,23 @@ public class login implements Initializable {
 
     }
 
+    /**
+     * Title: loginAction
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     */
     @FXML
     private void loginAction() throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
-        if (valid())
+        if (valid()){
+            Main.ctrl.userName=userName;
+            Main.ctrl.userIconpath="src/gui/imagesrc/user/user1.png";
+            UserDaoImp udi = new UserDaoImp();
+            User user = udi.selectByName(Main.ctrl.userName);
+            Main.ctrl.userVipStatus=user.getVIPstatus();
+            Main.ctrl.sceneInit();
             enter();
+        }
         else {
 
             lbl_error.setVisible(true);

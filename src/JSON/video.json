@@ -2,20 +2,20 @@
 	{
 		"videoId": 1,
 		"videoInfo": {
-			"name": "负重深蹲",
+			"name": "hiit",
 			"duration": 60000,
 			"coachId": 1,
-			"type": "下肢训练",
+			"type": "hiit",
 			"localPath": "xxxxxxx"
 		}
 	},
 	{
 		"videoId": 2,
 		"videoInfo": {
-			"name": "卧推",
+			"name": "yoga",
 			"duration": 600000,
 			"coachId": 2,
-			"type": "上肢训练",
+			"type": "yoga",
 			"localPath": "xxxxxxx"
 		}
 	}

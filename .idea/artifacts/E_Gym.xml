@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="E-Gym">
+    <output-path>D:/egymjar</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="gui.App" />
+        <option name="description" value="A Javafx application for London Fitness." />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="London Fitness" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="E_Gym.jar">
+        <element id="module-output" name="E-Gym" />
+      </element>
+      <element id="library" level="project" name="animatefx-1.2.0" />
+      <element id="library" level="module" name="JUnit5.7.0" module-name="E-Gym" />
+    </root>
+  </artifact>
+</component>

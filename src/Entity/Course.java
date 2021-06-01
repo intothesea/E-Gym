@@ -1,5 +1,11 @@
-package Entity;
-
+package entity;
+/**
+ * Title: Course
+ * Description: The entity class for recorded courses.
+ *
+ * @author MingdaJia
+ * @version 1.0.1
+ */
 public class Course {
 	private int courseid;
 	private int coachid;

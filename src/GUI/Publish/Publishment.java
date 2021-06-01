@@ -1,9 +1,9 @@
-package GUI.Publish;
+package gui.publish;
 
-import GUI.Main.Main;
-import GUI.global.json.JsonTool;
+import control.Copyfile;
+import control.LoadPage;
+import control.jsontool.JsonTool;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -14,19 +14,16 @@ import javafx.stage.FileChooser;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import GUI.App;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+/**
+ * This class is the template block of community.
+ * @author Jiaxuan Wang
+ */
 public class Publishment implements Initializable {
     @FXML
     public Button Picture;
@@ -49,9 +46,14 @@ public class Publishment implements Initializable {
     @FXML
     int n=0;
     public File file;
-    JsonTool a=new JsonTool("src/GUI/Community/community.json");
+    JsonTool a=new JsonTool("src/gui/Community/community.json");
 
     public JSONArray input;
+    /**
+     * This method is used to deal with the button click.
+     * @return Nothing.
+     * @param actionEvent the button click
+     */
     @FXML
     public void OnButtonClick(javafx.event.ActionEvent actionEvent) {
         configureFileChooser(fileChooser);
@@ -59,9 +61,14 @@ public class Publishment implements Initializable {
         System.out.println(n);
         FileChoosing(file,imageViews[n]);
         n++;
-        //imageViews[n].setImage(new Image("GUI/Publish/Pic/11.png"));
+        //imageViews[n].setImage(new Image("gui/Publish/Pic/11.png"));
 
     }
+    /**
+     * This method is used to initialize the filechooser tool.
+     * @return Nothing.
+     * @param fileChooser filechooser tool
+     */
     @FXML
     public void configureFileChooser(FileChooser fileChooser)
     {
@@ -75,6 +82,12 @@ public class Publishment implements Initializable {
                 new FileChooser.ExtensionFilter("BMP","*.bmp")
         );
     }
+    /**
+     * This method is used to choose the file.
+     * @return Nothing.
+     * @param file the choosed file
+     * @param imageView the fxml picture container
+     */
     public void FileChoosing(File file,ImageView imageView)
     {
         if (file != null)
@@ -91,7 +104,10 @@ public class Publishment implements Initializable {
 
     }
 
-
+    /**
+     * This method is used to initialize the fxml page.
+     * @return Nothing.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         imageViews[0]=imageView1;
@@ -108,10 +124,17 @@ public class Publishment implements Initializable {
             e.printStackTrace();
         }
     }
+    /**
+     * This method is used to deal with the button click.
+     * @return Nothing.
+     * @see JSONException,IOException
+     */
     @FXML
-    private void handleclick() throws IOException, JSONException {
+    private void handleClick() throws IOException, JSONException {
         if(n==1){
-            copyFile(file.getPath(),"src/GUI/imagesrc/cpic/"+String.valueOf(input.length()+1)+".jpg");
+            Copyfile tool=new Copyfile();
+            LoadPage temp=new LoadPage();
+            tool.copyFile(file.getPath(),"src/gui/imagesrc/cpic/"+String.valueOf(input.length()+1)+".jpg");
             System.out.println("Done");
             JSONObject jsonObject=new JSONObject();
             jsonObject.put("title",title.getText());
@@ -123,39 +146,7 @@ public class Publishment implements Initializable {
             imageView1.setImage(null);
             title.setText(null);
             content.setText(null);
-            load("Community","community");
-        }
-    }
-    public static void copyFile(String srcPath, String destPath) throws IOException {
-
-        // 打开输入流
-        FileInputStream fis = new FileInputStream(srcPath);
-        // 打开输出流
-        FileOutputStream fos = new FileOutputStream(destPath);
-
-        // 读取和写入信息
-        int len = 0;
-        // 创建一个字节数组，当做缓冲区
-        byte[] b = new byte[1024];
-        while ((len = fis.read(b)) != -1) {
-            fos.write(b, 0, len);
-        }
-
-        // 关闭流  先开后关  后开先关
-        fos.close(); // 后开先关
-        fis.close(); // 先开后关
-
-    }
-    private void load(String module, String name){
-        //System.out.println(getClass().getResource("GUI/" + module + "/" + name + ".fxml"));
-        try {
-            global.ViewManager.getInstance().put(
-                    name,
-                    FXMLLoader.load(getClass().getResource("/GUI/" + module + "/" + name + ".fxml"))
-            );
-            //preloaderNotify();
-        } catch (IOException e) {
-            e.printStackTrace();
+            temp.load("community","community");
         }
     }
 }

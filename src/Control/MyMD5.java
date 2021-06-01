@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -6,15 +6,23 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+/**
+ * Title: MyMD5
+ * Description: Containing Encryption and Decryption methods with MD5.
+ *
+ * @author MingdaJia
+ * @version 1.0.1
+**/
 public class MyMD5 {
 
-	private static final String HEX_NUMS_STR = "0123456789ABCDEF";
-	private static final Integer SALT_LENGTH = 12;
+	private static final String hexNumsStr = "0123456789ABCDEF";
+	private static final Integer saltLength = 12;
 
-	/**
-	 * 
-	 * @param hex
-	 * @return
+	/**Title: hexStringToByte
+	 * Description: convert string to a hex byte list.
+	 *
+	 * @param hex The String to be converted
+	 * @return byte[] The converted hexadecimal byte list.
 	 */
 	public static byte[] hexStringToByte(String hex) {
 		int len = (hex.length() / 2);
@@ -22,15 +30,16 @@ public class MyMD5 {
 		char[] hexChars = hex.toCharArray();
 		for (int i = 0; i < len; i++) {
 			int pos = i * 2;
-			result[i] = (byte) (HEX_NUMS_STR.indexOf(hexChars[pos]) << 4 | HEX_NUMS_STR.indexOf(hexChars[pos + 1]));
+			result[i] = (byte) (hexNumsStr.indexOf(hexChars[pos]) << 4 | hexNumsStr.indexOf(hexChars[pos + 1]));
 		}
 		return result;
 	}
 
-	/**
+	/**Title: byteToHexString
+	 * Description: Convert byte list to a String
 	 * 
-	 * @param b
-	 * @return
+	 * @param b The byte string to be converted
+	 * @return String the value needed
 	 */
 	public static String byteToHexString(byte[] b) {
 		StringBuffer hexString = new StringBuffer();
@@ -44,11 +53,12 @@ public class MyMD5 {
 		return hexString.toString();
 	}
 
-	/**
+	/**Title: validPassword
+	 * Description: Checking that if a password is correct or not
 	 * 
-	 * @param password
-	 * @param passwordInDb
-	 * @return
+	 * @param password The password user input
+	 * @param passwordInDb The real encrypted password in database
+	 * @return boolean If true, password correct, if not it's wrong.
 	 * @throws NoSuchAlgorithmException
 	 * @throws UnsupportedEncodingException
 	 */
@@ -57,9 +67,9 @@ public class MyMD5 {
 		//
 		byte[] pwdInDb = hexStringToByte(passwordInDb);
 		//
-		byte[] salt = new byte[SALT_LENGTH];
+		byte[] salt = new byte[saltLength];
 		//
-		System.arraycopy(pwdInDb, 0, salt, 0, SALT_LENGTH);
+		System.arraycopy(pwdInDb, 0, salt, 0, saltLength);
 		//
 		MessageDigest md = MessageDigest.getInstance("MD5");
 		//
@@ -69,9 +79,9 @@ public class MyMD5 {
 		//
 		byte[] digest = md.digest();
 		//
-		byte[] digestInDb = new byte[pwdInDb.length - SALT_LENGTH];
+		byte[] digestInDb = new byte[pwdInDb.length - saltLength];
 		//
-		System.arraycopy(pwdInDb, SALT_LENGTH, digestInDb, 0, digestInDb.length);
+		System.arraycopy(pwdInDb, saltLength, digestInDb, 0, digestInDb.length);
 		//
 		if (Arrays.equals(digest, digestInDb)) {
 			//
@@ -82,11 +92,11 @@ public class MyMD5 {
 		}
 	}
 
-	/**
-	 *
+	/**Title: getEncryptedPwd
+	 *Description: Enrype a password by MD5
 	 * 
-	 * @param password
-	 * @return
+	 * @param password The original password
+	 * @return String The encrypted password
 	 * @throws NoSuchAlgorithmException
 	 * @throws UnsupportedEncodingException
 	 */
@@ -97,7 +107,7 @@ public class MyMD5 {
 		//
 		SecureRandom random = new SecureRandom();
 		//
-		byte[] salt = new byte[SALT_LENGTH];
+		byte[] salt = new byte[saltLength];
 		//
 		random.nextBytes(salt);
 
@@ -113,11 +123,11 @@ public class MyMD5 {
 		byte[] digest = md.digest();
 
 		//
-		pwd = new byte[digest.length + SALT_LENGTH];
+		pwd = new byte[digest.length + saltLength];
 		//
-		System.arraycopy(salt, 0, pwd, 0, SALT_LENGTH);
+		System.arraycopy(salt, 0, pwd, 0, saltLength);
 		//
-		System.arraycopy(digest, 0, pwd, SALT_LENGTH, digest.length);
+		System.arraycopy(digest, 0, pwd, saltLength, digest.length);
 		//
 		return byteToHexString(pwd);
 	}

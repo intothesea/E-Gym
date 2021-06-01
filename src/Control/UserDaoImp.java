@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import java.io.*;
 import java.security.NoSuchAlgorithmException;
@@ -6,27 +6,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import Entity.User;
-import JSON.Tool;
+import entity.User;
+import control.jsontool.Tool;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /**
- * Title: UserDaoImp Description:
+ * Title: UserDaoImp
+ * Description: A implementation class containing methods for users, implements Interface UserDao
  *
  * @author https://blog.csdn.net/qq_40180411/article/details/81321424 available
  * on 2020-07-01
+ * @version 1.0.1
  * @author Mingda Jia
+ * @version 1.0.2
  * @author Mingda Jia
  * @version 2.0.1
  */
 public class UserDaoImp implements UserDao {
 
     /**
-     * Description:
+     * Title: insert
+     * Description: Insert a user into the JSON file
      *
-     * @param user
-     * @return
+     * @param user The user to be inserted.
+     * @return int The affected user, if return 1, insert 1 user successfully, if 0, insert with error.
      */
     @Override
     public int insert(User user) {
@@ -64,6 +71,8 @@ public class UserDaoImp implements UserDao {
             jo.put("name", user.getName());
             jo.put("tel", user.getTel());
             jo.put("email", user.getEmail());
+            jo.put("VIPstatus", user.getVIPstatus());
+            jo.put("filepath", user.getFilePath());
             obj.accumulate("userInfo", jo);
 
             obj.put("appointment", appointment);
@@ -88,10 +97,11 @@ public class UserDaoImp implements UserDao {
     }
 
     /**
-     * Title: delete Description:
+     * Title: delete
+     * Description: The method to delete a user from JSON file
      *
-     * @param userNo
-     * @return int
+     * @param userNo The user to be deleted.
+     * @return int Affected user number,  if return 1, delete 1 user successfully, if 0, delete with error.
      */
     @Override
     public int delete(String userNo) {
@@ -107,10 +117,11 @@ public class UserDaoImp implements UserDao {
     }
 
     /**
-     * Title:selectById Description:
+     * Title:selectById
+     * Description: The method to select a user from JSON by user's name.
      *
-     * @param userName
-     * @return User
+     * @param userName The name of the user we want to find
+     * @return User The founded user
      */
     @Override
     public User selectByName(String userName) {
@@ -132,7 +143,8 @@ public class UserDaoImp implements UserDao {
     }
 
     /**
-     * Title: update Description:
+     * Title: update
+     * Description: The method to update user information, not useful by now
      *
      * @param userNo
      * @param password
@@ -160,10 +172,11 @@ public class UserDaoImp implements UserDao {
     }
 
     /**
-     * Title: updatePass Description:
+     * Title: updatePass
+     * Description: The method to update a password of a user.
      *
-     * @param userNo String
-     * @return int
+     * @param userNo String The id of the user
+     * @return int Affected user number,  if return 1, update 1 user successfully, if 0, update with error.
      */
     @Override
     public int updatePass(int userNo) {
@@ -188,9 +201,10 @@ public class UserDaoImp implements UserDao {
     }
 
     /**
-     * Title: selectAll Description:
+     * Title: selectAll
+     * Description: The method to select all the users from the JSON file.
      *
-     * @return List<User> arraylist
+     * @return List<User> arraylist The list of all the users in the system.
      */
     @Override
     public List<User> selectAll() {
@@ -223,11 +237,14 @@ public class UserDaoImp implements UserDao {
                 String name = userInfo.getString("name");
                 String tel = userInfo.getString("tel");
                 String email = userInfo.getString("email");
+                String filePath = userInfo.getString("filepath");
+                String status = userInfo.getString("VIPstatus");
+
 
                 int uId = jsonObject.getInt("id");
 
                 //System.out.println("name:" + name + ";id:" + uId);
-                User user = new User(uId, password, name, birthday, balance, email, tel);
+                User user = new User(uId, password, name, birthday, balance, email, tel, filePath, status);
                 userList.add(user);
             }
 
@@ -241,5 +258,77 @@ public class UserDaoImp implements UserDao {
         }
         return userList;
     }
+
+    /**
+     * Title: updateStatus
+     * Description: The method updating the VIP status of a certain user
+     *
+     * @param user The user whose status will be changed.
+     * @param status The status the user will be changed to.
+     * @return int The affected data rows, int == 1, update a user successfully, int == 0, failed.
+     */
+    @Override
+    public int updateStatus(User user, String status) {
+        int affectedRow = 0;
+        try {
+            File file = new File("src/JSON/user.json");
+            if (!file.exists()) {
+                System.out.println("file not exist!");
+            }
+            FileInputStream fileInputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "utf-8");
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String Js = "";
+            String Line = null;
+            while ((Line = bufferedReader.readLine()) != null) {
+                Js += Line;
+            }
+            bufferedReader.close();
+            JSONArray originJson = new JSONArray(Js);
+
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "utf-8");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            JSONObject obj = new JSONObject();
+            JSONObject jo = new JSONObject();
+            JSONArray appointment = new JSONArray();
+            JSONArray collection = new JSONArray();
+
+            obj.put("id", user.getUid());
+
+            jo.put("birthday", user.getBirthday());
+            jo.put("password", user.getPassword());
+            jo.put("balance", user.getBalance());
+            jo.put("name", user.getName());
+            jo.put("tel", user.getTel());
+            jo.put("email", user.getEmail());
+            jo.put("VIPstatus",status);
+            jo.put("filepath", user.getFilePath());
+            obj.accumulate("userInfo", jo);
+
+            obj.put("appointment", appointment);
+            obj.put("collection", collection);
+
+            originJson.put(obj);
+
+            String jsonString = originJson.toString();
+            Tool tool = new Tool();
+            ;
+            String JsonString = tool.stringToJSON(jsonString);
+            bufferedWriter.write(JsonString);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+        return affectedRow;
+    }
+
+
+
+
 
 }

@@ -1,11 +1,9 @@
-package GUI.Community;
+package gui.community;
 
-import GUI.Main.Main;
+import gui.mainpage.Main;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
@@ -17,8 +15,11 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-
-public class cards {
+/**
+ * This class is the inner page of community.
+ * @author Jiaxuan Wang
+ */
+public class Cards {
     @FXML
     private ImageView pic;
     @FXML
@@ -29,35 +30,25 @@ public class cards {
     private MaterialDesignIconView like;
 
     private Main main=Main.ctrl;
-    private template pcontroller;
+    private TemplateCommunity pController;
 
     public int position;
     public void setPosition(int position){
         this.position=position;
     }
     public void setHeart(Paint color){like.setFill(color);}
-    public void setPcontroller(template pcontroller){this.pcontroller=pcontroller;}
+    public void setpController(TemplateCommunity pController){this.pController=pController;}
     @FXML
-    private void initialize() throws JSONException {
-//        //main=main.ctrl;
-//        JSONObject we = community.input.getJSONObject(position);
-//        System.out.println(1);
-//        File file=new File("EGym/src/src/foreground.jpg");
-//        System.out.println(file.toURI().toString());
-//        Image image=new Image(file.toURI().toString());
-//        pic.setImage(image);
-//        title.setText(we.getString("title"));
-//        Text content=new Text(we.getString("content"));
-//        content.setFont(Font.font(20));
-//        text.getChildren().add(content);
-
-    }
+    private void initialize() throws JSONException { }
+    /**
+     * This method is used to show the page.
+     * @return Nothing.
+     * @see JSONException
+     */
     public void show() throws JSONException {
         //main=main.ctrl;
-        JSONObject we = community.input.getJSONObject(position);
-        System.out.println(1);
-        File file=new File("src/GUI/imagesrc/cpic/"+we.getString("pid")+".jpg");
-        System.out.println(file.toURI().toString());
+        JSONObject we = Community.input.getJSONObject(position);
+        File file=new File("src/gui/imagesrc/cpic/"+we.getString("pid")+".jpg");
         Image image=new Image(file.toURI().toString());
         pic.setImage(image);
         title.setText(we.getString("title"));
@@ -65,21 +56,31 @@ public class cards {
         content.setFont(Font.font(20));
         text.getChildren().add(content);
     }
+    /**
+     * This method is used to deal with the button click.
+     * @return Nothing.
+     * @see JSONException,IOException
+     */
     @FXML
-    private void handleclick() throws IOException, JSONException {
+    private void handleClick() throws IOException, JSONException {
         title.setText("Community");
-        main.body.setContent(global.ViewManager.getInstance().get("community"));
+        main.body.setContent(control.global.ViewManager.getInstance().get("community"));
     }
+    /**
+     * This method is used to change the color of heart.
+     * @return Nothing.
+     * @see JSONException,IOException
+     */
     @FXML
-    private void exchangecolor() throws IOException, JSONException {
+    private void exchangeColor() throws IOException, JSONException {
 
         if(like.getFill().equals(Paint.valueOf("#000000"))){
             like.setFill(Paint.valueOf("#E55C5C"));
-            pcontroller.setHeart(Paint.valueOf("#E55C5C"));
+            pController.setHeart(Paint.valueOf("#E55C5C"));
         }
         else{
             like.setFill(Paint.valueOf("#000000"));
-            pcontroller.setHeart(Paint.valueOf("#000000"));
+            pController.setHeart(Paint.valueOf("#000000"));
         }
     }
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Publish.Publishment">
+<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.publish.Publishment">
     <children>
         <AnchorPane layoutX="2.0" layoutY="1.0" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -30,7 +30,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="837.0" spacing="10.0">
                      <children>
-                        <GNButton buttonType="CENTRALIZE" onMouseClicked="#handleclick" prefHeight="143.0" prefWidth="295.0" text="Publish" transitionColor="#e35034">
+                        <GNButton buttonType="CENTRALIZE" onMouseClicked="#handleClick" prefHeight="143.0" prefWidth="295.0" text="Publish" transitionColor="#e35034">
                            <!--transitionText>
                               <LinearGradient endX="1.0" endY="1.0">
                                  <stops>

@@ -1,7 +1,7 @@
-package GUI.Community;
+package gui.community;
 
-import GUI.Main.Main;
-import GUI.global.json.JsonTool;
+import control.jsontool.JsonTool;
+import gui.mainpage.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -10,38 +10,41 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.IOException;
-
-public class community {
+/**
+ * This class is the outer frame of community.
+ * @author Jiaxuan Wang
+ */
+public class Community {
     @FXML
-    private VBox cardlist;
+    private VBox cardList;
 
     private Main main=Main.ctrl;
 
     public void setMain(Main main){this.main=main;}
 
-
     public static JSONArray input;
 
-    public static int jsonindex;
-
+    public static int jsonIndex;
+    /**
+     * This method is used to initialize the fxml page.
+     * @return Nothing.
+     * @see JSONException,IOException
+     */
     @FXML
     private void initialize() throws IOException, JSONException {
 
-        //System.out.println(1111111111);
-        input=new JsonTool("src/GUI/Community/community.json").read();
+        input=new JsonTool("src/gui/community/community.json").read();
 
-        for(jsonindex=0;jsonindex<input.length();jsonindex++){
+        for(jsonIndex=0;jsonIndex<input.length();jsonIndex++){
             FXMLLoader loader = new FXMLLoader();
 
-            loader.setLocation(community.class.getResource("template.fxml"));
+            loader.setLocation(Community.class.getResource("template.fxml"));
             AnchorPane cardtemp = (AnchorPane) loader.load();
 
-            cardlist.getChildren().add(cardtemp);
+            cardList.getChildren().add(cardtemp);
 
-            //System.out.println(main);
         }
 
-        //System.out.println(1);
     }
 
 }

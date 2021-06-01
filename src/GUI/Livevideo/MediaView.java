@@ -1,23 +1,6 @@
-/*
- * Copyright (C) Gleidson Neves da Silveira
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-package GUI.Livevideo;
+package gui.livevideo;
 
-import GUI.Community.community;
-import GUI.Main.Main;
+import gui.mainpage.Main;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
@@ -29,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,9 +23,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * @author Gleidson Neves da Silveira | gleidisonmt@gmail.com
- * Create on  18/10/2018
- * Version 1.0
+ * This class is used to show the detailed video playing interface.
+ * @author Qingyu Xian
  */
 public class MediaView implements Initializable {
 
@@ -51,9 +34,8 @@ public class MediaView implements Initializable {
     @FXML private Label playTime;
     @FXML private FontAwesomeIconView icon;
     @FXML private Label title;
-
+    @FXML private Text text;
     private Duration duration;
-//    private Media media = new Media("file:///C:/Users/gleid/Videos/Android.mp4");
     private Media media = null;
     private MediaPlayer mediaPlayer = null;
     private final boolean repeat = false;
@@ -64,93 +46,27 @@ public class MediaView implements Initializable {
         this.position=position;
     }
 
+    /**
+     * This method initializes the Mediaview class
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        /*File filepath=new File("src/Cheerleader.mp4");
-        System.out.println("test"+filepath);
-        media = new Media(new File("src/GUI/mediasrc/v"+position+".mp4").toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
-
-        mediaView.setMediaPlayer(mediaPlayer);
-
-        mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
-            @Override
-            public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
-                updateValues();
-            }
-        });
-        mediaPlayer.setOnPlaying(new Runnable() {
-            public void run() {
-
-                if (stopRequested) {
-                    mediaPlayer.pause();
-                    stopRequested = false;
-                } else {
-                    icon.setGlyphName("PAUSE");
-//                    playButton.setGraphic(imageViewPause);
-                    //playButton.setText("||");
-                }
-            }
-        });
-        mediaPlayer.setOnPaused(new Runnable() {
-            public void run() {
-
-                icon.setGlyphName("PLAY");
-                //playButton.setText("||");
-            }
-        });
-        mediaPlayer.setOnReady(new Runnable() {
-            public void run() {
-                duration = mediaPlayer.getMedia().getDuration();
-                mediaPlayer.getMedia().getDuration();
-                updateValues();
-            }
-        });
-
-        mediaPlayer.setCycleCount(repeat ? MediaPlayer.INDEFINITE : 1);
-        mediaPlayer.setOnEndOfMedia(new Runnable() {
-            public void run() {
-                if (!repeat) {
-                    icon.setGlyphName("PAUSE");
-//                    playButton.setGraphic(imageViewPlay);
-                    //playButton.setText(">");
-                    stopRequested = true;
-                    atEndOfMedia = true;
-                }
-            }
-        });
-
-
-        slider.valueProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(javafx.beans.Observable observable) {
-                if (slider.isValueChanging()) {
-                    // multiply duration by percentage calculated by slider position
-                    if(duration != null) {
-                        mediaPlayer.seek(duration.multiply(slider.getValue() / 100.0));
-                    }
-                    updateValues();
-
-                }
-            }
-        });
-
-        volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                if (volumeSlider.isValueChanging()) {
-                    mediaPlayer.setVolume(volumeSlider.getValue() / 100.0);
-                }
-            }
-        });*/
     }
 
+    /**
+     * This method provides the actual UI when entering Mediaview section
+     * @return Nothing.
+     * @throws JSONException
+     */
     public void show() throws JSONException {
         JSONObject w = LiveVideo.input.getJSONObject(position);
         title.setText(w.getString("title"));
-        System.out.println(new File("src/GUI/mediasrc/v"+position+".mp4").toURI().toString());
-        media = new Media(new File("src/GUI/mediasrc/v"+position+".mp4").toURI().toString());
+        text.setText(w.getString("description"));
+        media = new Media(new File("src/gui/mediasrc/"+w.getString("videoname")).toURI().toString());
+
         mediaPlayer = new MediaPlayer(media);
 
         mediaView.setMediaPlayer(mediaPlayer);
@@ -169,8 +85,6 @@ public class MediaView implements Initializable {
                     stopRequested = false;
                 } else {
                     icon.setGlyphName("PAUSE");
-//                    playButton.setGraphic(imageViewPause);
-                    //playButton.setText("||");
                 }
             }
         });
@@ -178,7 +92,6 @@ public class MediaView implements Initializable {
             public void run() {
 
                 icon.setGlyphName("PLAY");
-                //playButton.setText("||");
             }
         });
         mediaPlayer.setOnReady(new Runnable() {
@@ -227,11 +140,21 @@ public class MediaView implements Initializable {
         });
     }
 
-@FXML
-    private void handleclickm() throws IOException, JSONException {
-        Main.ctrl.body.setContent(global.ViewManager.getInstance().get("LiveVideoPage0"));
+    /**
+     * This method returns the UI to the LiveVideo page.
+     * @return Nothing
+     * @throws IOException
+     * @throws JSONException
+     */
+    @FXML
+    private void handleClickm() throws IOException, JSONException {
+        Main.ctrl.body.setContent(control.global.ViewManager.getInstance().get("LiveVideoPage0"));
     }
 
+    /**
+     * This method controls the playtime and volume slider.
+     * @return Nothing.
+     */
     private void updateValues() {
         if (playTime != null && slider != null && volumeSlider != null && duration != null) {
             Platform.runLater(new Runnable() {
@@ -240,11 +163,11 @@ public class MediaView implements Initializable {
                     playTime.setText(formatTime(currentTime, duration));
                     slider.setDisable(duration.isUnknown());
                     if (!slider.isDisabled() && duration.greaterThan(Duration.ZERO) && !slider.isValueChanging()) {
-//                        slider.setValue(currentTime.divide(duration).toMillis() * 100.0);
+                        slider.setValue(currentTime.divide(duration).toMillis() * 100.0);
 
-                        double du = duration.toMillis() * 100.0;
-                        Duration divide =  currentTime.divide(du);
-                        slider.setValue(divide.toMillis());
+//                        double du = duration.toMillis() * 100.0;
+//                        Duration divide =  currentTime.divide(du);
+//                        slider.setValue(divide.toMillis());
                     }
                     if (!volumeSlider.isValueChanging()) {
                         volumeSlider.setValue((int) Math.round(mediaPlayer.getVolume() * 100));
@@ -254,7 +177,12 @@ public class MediaView implements Initializable {
         }
     }
 
-
+    /**
+     * This method illustrates the current video time and total time.
+     * @param elapsed
+     * @param duration
+     * @return The current time of the video.
+     */
     private String formatTime(Duration elapsed, Duration duration) {
         int intElapsed = (int)Math.floor(elapsed.toSeconds());
         int elapsedHours = intElapsed / (60 * 60);
@@ -293,7 +221,10 @@ public class MediaView implements Initializable {
         }
     }
 
-
+    /**
+     * This method makes the player play.
+     * @return Nothing.
+     */
     @FXML
     private void play(){
             updateValues();
@@ -328,6 +259,10 @@ public class MediaView implements Initializable {
             }
     }
 
+    /**
+     * This method makes the player stop.
+     * @return Nothing.
+     */
     @FXML
     private void pause(){
         mediaPlayer.pause();
