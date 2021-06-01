@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<StackPane prefHeight="825.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.livevideo.MediaView">
+   <children>
+      <TabPane prefHeight="825.0" prefWidth="1196.0" style="-fx-tab-min-width: 100;">
+         <tabs>
+            <Tab closable="false" text="Live video">
+               <content>
+                  <VBox prefHeight="776.0" prefWidth="1140.0" spacing="10.0">
+                     <children>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="14.0" onAction="#handleClickm" prefHeight="32.0" prefWidth="42.0" ripplerFill="BLACK">
+                           <styleClass>
+                              <String fx:value="btn-transparent" />
+                              <String fx:value="round" />
+                              <String fx:value="btn-large" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagesrc/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <VBox prefHeight="67.0" prefWidth="1157.0">
+                           <children>
+                              <Label fx:id="title" prefHeight="25.0" prefWidth="1157.0" text="title" textFill="#0b03eb">
+                                 <styleClass>
+                                    <String fx:value="h3" />
+                                    <String fx:value="title" />
+                                 </styleClass>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <TextFlow prefHeight="37.0" prefWidth="1157.0">
+                                 <children>
+                                    <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;"  wrappingWidth="558.283203125" />
+                                 </children>
+                              </TextFlow>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="577.0" prefWidth="973.0" spacing="20.0" styleClass="box-light">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="577.0" prefWidth="1157.0" spacing="10.0">
+                                 <children>
+                                    <VBox prefHeight="513.0" prefWidth="986.0">
+                                       <children>
+                                          <AnchorPane prefHeight="560.0" prefWidth="976.0">
+                                             <children>
+                                                <VBox alignment="CENTER" layoutX="-14.0" layoutY="2.0" prefHeight="575.0" prefWidth="1000.0" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="2.0">
+                                                   <children>
+                                                      <MediaView fx:id="mediaView" fitHeight="490.0" fitWidth="1000.0">
+                                                         <viewport>
+                                                            <Rectangle2D />
+                                                         </viewport>
+                                                      </MediaView>
+                                                      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="462.0">
+                                                         <children>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#play" prefHeight="30.0" prefWidth="40.0" ripplerFill="#000000c7" text="Play">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fx:id="icon" fill="#00000080" glyphName="PLAY" style="-fx-fill: black;" />
+                                                               </graphic>
+                                                               <styleClass>
+                                                                  <String fx:value="btn-transparent" />
+                                                                  <String fx:value="round" />
+                                                               </styleClass>
+                                                            </JFXButton>
+                                                            <Slider fx:id="slider" prefHeight="16.0" prefWidth="266.0" />
+                                                            <Label fx:id="playTime" prefHeight="15.0" prefWidth="95.0" style="-fx-text-fill: black;" text="Label" />
+                                                            <Label prefHeight="17.0" prefWidth="88.0" style="-fx-text-fill: black;" text="  Volume" />
+                                                            <Slider fx:id="volumeSlider" prefHeight="18.0" prefWidth="81.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="577.0" prefWidth="151.0" spacing="20.0">
+                                       <children>
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
+                                             <styleClass>
+                                                <String fx:value="btn-transparent" />
+                                                <String fx:value="round" />
+                                                <String fx:value="btn-large" />
+                                             </styleClass>
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="GIFT" size="50" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
+                                             <styleClass>
+                                                <String fx:value="btn-transparent" />
+                                                <String fx:value="round" />
+                                                <String fx:value="btn-large" />
+                                             </styleClass>
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="HEART" size="50" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
+                                             <styleClass>
+                                                <String fx:value="btn-transparent" />
+                                                <String fx:value="round" />
+                                                <String fx:value="btn-large" />
+                                             </styleClass>
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="BOOK" size="50" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton prefHeight="50.0" prefWidth="90.0">
+                                             <styleClass>
+                                                <String fx:value="btn-transparent" />
+                                                <String fx:value="round" />
+                                                <String fx:value="btn-large" />
+                                             </styleClass>
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="COMMENT" size="50" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="30.0" right="30.0" top="100.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+   <stylesheets>
+   </stylesheets>
+</StackPane>

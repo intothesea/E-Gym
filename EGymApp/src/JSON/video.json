@@ -1,0 +1,22 @@
+[
+	{
+		"videoId": 1,
+		"videoInfo": {
+			"name": "hiit",
+			"duration": 60000,
+			"coachId": 1,
+			"type": "hiit",
+			"localPath": "xxxxxxx"
+		}
+	},
+	{
+		"videoId": 2,
+		"videoInfo": {
+			"name": "yoga",
+			"duration": 600000,
+			"coachId": 2,
+			"type": "yoga",
+			"localPath": "xxxxxxx"
+		}
+	}
+]

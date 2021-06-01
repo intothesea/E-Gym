@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="E_Gym.jnlp">
+  <information>
+    <title>London Fitness</title>
+    <vendor>Unknown</vendor>
+    <description>A Javafx application for London Fitness.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="E_Gym.jar" size="233435970" download="eager" />
+    <jar href="GNAvatarView-1.0-rc.jar" size="26082" download="eager" />
+    <jar href="GNButton-1.1.0.jar" size="194323" download="eager" />
+    <jar href="GNCalendar-1.0-alpha.jar" size="11402" download="eager" />
+    <jar href="GNCarousel-2.1.5.jar" size="530460" download="eager" />
+    <jar href="GNDecorator-2.1.2-alpha.jar" size="2869249" download="eager" />
+    <jar href="animatefx-1.2.0.jar" size="85592" download="eager" />
+    <jar href="apiguardian-api-1.1.0.jar" size="2387" download="eager" />
+    <jar href="colors-1.4.jar" size="32122" download="eager" />
+    <jar href="controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="jfoenix-8.0.7.jar" size="2631271" download="eager" />
+    <jar href="jre\lib\charsets.jar" size="3090398" download="eager" />
+    <jar href="jre\lib\deploy.jar" size="5051274" download="eager" />
+    <jar href="jre\lib\ext\access-bridge-64.jar" size="197119" download="eager" />
+    <jar href="jre\lib\ext\cldrdata.jar" size="3860563" download="eager" />
+    <jar href="jre\lib\ext\dnsns.jar" size="8286" download="eager" />
+    <jar href="jre\lib\ext\jaccess.jar" size="44516" download="eager" />
+    <jar href="jre\lib\ext\jfxrt.jar" size="18254575" download="eager" />
+    <jar href="jre\lib\ext\localedata.jar" size="2246521" download="eager" />
+    <jar href="jre\lib\ext\nashorn.jar" size="2034152" download="eager" />
+    <jar href="jre\lib\ext\sunec.jar" size="43191" download="eager" />
+    <jar href="jre\lib\ext\sunjce_provider.jar" size="285868" download="eager" />
+    <jar href="jre\lib\ext\sunmscapi.jar" size="49287" download="eager" />
+    <jar href="jre\lib\ext\sunpkcs11.jar" size="283206" download="eager" />
+    <jar href="jre\lib\ext\zipfs.jar" size="69394" download="eager" />
+    <jar href="jre\lib\javaws.jar" size="956964" download="eager" />
+    <jar href="jre\lib\jce.jar" size="118047" download="eager" />
+    <jar href="jre\lib\jfr.jar" size="573191" download="eager" />
+    <jar href="jre\lib\jfxswt.jar" size="33917" download="eager" />
+    <jar href="jre\lib\jsse.jar" size="1921233" download="eager" />
+    <jar href="jre\lib\management-agent.jar" size="381" download="eager" />
+    <jar href="jre\lib\plugin.jar" size="1924500" download="eager" />
+    <jar href="jre\lib\resources.jar" size="3546593" download="eager" />
+    <jar href="jre\lib\rt.jar" size="64290319" download="eager" />
+    <jar href="jre\lib\security\policy\limited\US_export_policy.jar" size="3482" download="eager" />
+    <jar href="jre\lib\security\policy\limited\local_policy.jar" size="3984" download="eager" />
+    <jar href="jre\lib\security\policy\unlimited\US_export_policy.jar" size="3482" download="eager" />
+    <jar href="jre\lib\security\policy\unlimited\local_policy.jar" size="3490" download="eager" />
+    <jar href="json.jar" size="94360" download="eager" />
+    <jar href="junit-jupiter-5.7.0.jar" size="6359" download="eager" />
+    <jar href="junit-jupiter-api-5.7.0.jar" size="174598" download="eager" />
+    <jar href="junit-jupiter-engine-5.7.0.jar" size="211836" download="eager" />
+    <jar href="junit-jupiter-params-5.7.0.jar" size="567345" download="eager" />
+    <jar href="junit-platform-commons-1.7.0.jar" size="99511" download="eager" />
+    <jar href="junit-platform-engine-1.7.0.jar" size="180907" download="eager" />
+    <jar href="opentest4j-1.2.0.jar" size="7653" download="eager" />
+    <jar href="scenicView.jar" size="524264" download="eager" />
+    <jar href="tilesfx-1.5.2.jar" size="1365796" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="gui.App"  name="E-Gym" />
+  <update check="background"/>
+</jnlp>
