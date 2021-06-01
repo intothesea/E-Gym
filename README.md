@@ -1,6 +1,10 @@
 # Very important:
-To download large files properly in FinalExe branch. Make sure you have installed git lfs https://git-lfs.github.com/ .
-Then, Use git clone -b FinalExe https://github.com/intothesea/E-Gym.git to download the project, instead of downloading it directly.
+To download large files properly in FinalExe branch. Make sure you have installed git lfs, reference: https://git-lfs.github.com/ .
+Then, Use `git clone -b FinalExe https://github.com/intothesea/E-Gym.git` to download the project, instead of downloading it directly.
+
+You can also download it from:
+链接：https://pan.baidu.com/s/13BponX8j82rI6U-kTN2aJA 
+提取码：lfct 
 
 # E-Gym
 E-Gym application
