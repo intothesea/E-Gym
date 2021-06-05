@@ -1,4 +1,4 @@
-#Very important
+# Very important
 
 To download large files properly in FinalExe(Executable) branch. Make sure you have installed git lfs, reference: https://git-lfs.github.com/ . Then, Use git clone -b FinalExe https://github.com/intothesea/E-Gym.git to download the project, instead of downloading it directly.
 
